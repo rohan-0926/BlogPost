@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= post.title %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .post-container {
+      background-color: #333;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .post-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .post-content {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 20px;
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .back-link:hover {
+      color: #0056b3;
+    }
+
+    .delete-button {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .update-button {
+      background-color: #4de79a;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    .delete-button:hover {
+      background-color: #c82333;
+    }
+
+    .update-button:hover {
+      background-color: #1da762;;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content:space-around;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="post-container">
+    <h1 class="post-title"><%= post.title %></h1>
+    <p class="post-content"><%= post.content %></p>
+    
+    <div class="button-container">
+      <form action="/delete/<%= post._id %>" method="POST">
+        <button class="delete-button" type="submit">Delete</button>
+      </form>
+      <a href="/post/<%= post._id %>/edit" class="update-button">Edit</a>
+    </div>
+
+    <a href="/body" class="back-link">Back to Blogs</a>
+
+
+</body>
+</html>

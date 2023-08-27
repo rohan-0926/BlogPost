@@ -1,0 +1,106 @@
+<!-- create-post.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .create-post-container {
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .create-post-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #eee;
+            text-align: center;
+            width: 100%; 
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 80%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+            background-color: #fff;
+            color: #333;
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            text-decoration: none;
+            border: none;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-left: 438px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            
+        }
+    </style>
+</head>
+<body>
+   <div class="create-post-container">
+        <h1 class="create-post-title">Create a New Post</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required></textarea>
+            </div>
+            <button type="submit">Create Post</button>
+        </form>
+    </div>
+    
+    
+    
+    
+</body>
+</html>

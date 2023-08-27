@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+      background-color: #222; /* Dark gray background color */
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* Style for the main content area */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    /* Style for the about section */
+    .about-section {
+      background-color: #111; /* Slightly darker background color */
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Text styles */
+    h1, h2, h3 {
+      color: #fff;
+    }
+
+    p {
+      color: #ccc;
+    }
+
+    .widgets {
+        flex: 1; /* Take up remaining horizontal space */
+        padding: 20px; /* Add spacing around widgets */
+        background-color: #1c1c1c; /* Dark gray background color for widgets */
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Matching box shadow */
+        color: #fff;
+        overflow: auto;
+      }
+      
+      .widget {
+        margin-bottom: 20px; /* Add spacing between widgets */
+      }
+      
+      .widget h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .widget ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      .widget li {
+        margin-bottom: 10px;
+      }
+      
+      .widget a {
+        text-decoration: none;
+        color: #007bff; /* Blue link color */
+      }
+      
+      .widget a:hover {
+        text-decoration: underline;
+      }
+      
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <%- include('partials/header.ejs') %>
+    <div class="main-content">
+      <div class="about-section">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum sem sit amet vehicula. Morbi et ultrices erat. Nulla facilisi. Sed bibendum justo a arcu malesuada, at accumsan velit dapibus.</p>
+        <p>Integer et est nec libero scelerisque auctor at vitae augue. Sed euismod, urna nec dignissim gravida, nisl leo sodales arcu, vitae pharetra augue enim eu nisi.</p>
+        <br>
+        <h3>Our Mission</h3>
+        <p>Nullam condimentum turpis eu luctus auctor. Nam viverra nisl id odio suscipit, in dictum lectus pharetra. Curabitur nec vestibulum sapien.</p>
+        <br>
+        <h3>Our Team</h3>
+        <p>Meet our dedicated team members who are passionate about sharing their knowledge and insights with you.</p>
+        <br>
+        <h3>Rohan</h3>
+        <p>Full Stack Developer,Technical Content Writer</p>
+        <br>
+        <!-- Add more team members as needed -->
+      </div>
+    </div>
+    
+    <div class="main-container">
+        <div class="main-content">
+          <div class="about-section">
+            <!-- ... (about section content) ... -->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nostrum explicabo dolorum, illo iste voluptates quam officia, nemo voluptatum aut ratione pariatur. Labore totam veniam ea facilis praesentium dicta quaerat voluptatem ducimus ullam, perspiciatis reiciendis ex veritatis doloribus ipsum quis corporis ratione pariatur nihil similique eligendi commodi tenetur? Quibusdam, voluptate?</p>
+          </div>
+        </div>
+        
+        <div class="content-container">
+          <!-- Additional content on the right side -->
+          <div class="widgets">
+            <!-- Widget 1: Recent Posts -->
+            <div class="widget">
+              <h2>Recent Posts</h2>
+              <ul>
+                <% for (let i = 0; i < 3; i++) { %>
+                  <li>
+                    <a href="/post/<%= posts[i].id %>"><h2><%= posts[i].title %></h2></a>
+                    <p><%= posts[i].content %></p>
+                  </li>
+                <% } %>
+              </ul>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

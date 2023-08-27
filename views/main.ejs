@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Bad</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <%- include('partials/header.ejs') %>
+        <div class="main">
+            
+            <div class="animation-container">
+                <div class="animation-content">
+                    <p id="auto-writing"></p>
+                </div>
+                <div class="overview">
+                    <a id="overview-button" href="/body">Overview</a> <!-- Change to an anchor tag with a link to the overview page -->
+                </div>
+            </div>
+
+        </div>
+        <%- include('partials/footer.ejs') %>
+    </div>
+    <script>
+        const autoWritingContent = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat itaque sint quo est, eum magnam praesentium vero accusantium fugit dolorum velit a iusto tempore molestias fugiat suscipit aperiam cumque. Nostrum ut quod illo ipsa qui cum doloremque, eius illum eaque?  there you go..Done 🥂";
+        const typingInterval = 50;
+        const autoWritingElement = document.getElementById("auto-writing");
+
+        let i = 0;
+        function typeWriter() {
+            if (i < autoWritingContent.length) {
+                autoWritingElement.innerHTML += autoWritingContent.charAt(i);
+                i++;
+                setTimeout(typeWriter, typingInterval);
+            }
+        }
+        typeWriter();
+        
+
+    </script>
+</body>
+</html>
